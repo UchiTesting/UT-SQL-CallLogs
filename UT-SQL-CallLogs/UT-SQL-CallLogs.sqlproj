@@ -58,6 +58,10 @@
     <Folder Include="Properties" />
     <Folder Include="Scripts" />
     <Folder Include="Scripts\Tables" />
+    <Folder Include="Scripts\Post-Deployment" />
+    <Folder Include="Scripts\Seeds" />
+    <Folder Include="Scripts\Seeds\Common" />
+    <Folder Include="Scripts\Seeds\DEV" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Scripts\Tables\CommunicationModes.sql" />
@@ -66,5 +70,25 @@
     <Build Include="Scripts\Tables\MonthlyCalls.sql" />
     <Build Include="Scripts\Tables\People.sql" />
     <Build Include="Scripts\Tables\YearlyCalls.sql" />
+    <None Include="Scripts\Seeds\Common\SeedCommunicationModes.sql" />
+    <None Include="Scripts\Seeds\Common\SeedContinents.sql" />
+    <None Include="Scripts\Seeds\DEV\SeedSamplePeople.DEV.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\Post-Deployment\SeedReferenceTables.postdeploy.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UT-SQL-CallLogsUAT.publish.xml" />
+    <None Include="UT-SQL-CallLogsDEV.publish.xml" />
+    <None Include="UT-SQL-CallLogsPROD.publish.xml" />
+    <None Include="Scripts\Seeds\DEV\SeedSampleYearlyCalls.DEV.sql" />
+    <None Include="Scripts\Seeds\DEV\SeedSampleMonthlyCalls.DEV.sql" />
+    <None Include="Scripts\Seeds\DEV\SeedSampleLastCalls.DEV.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <SqlCmdVariable Include="Environment">
+      <DefaultValue>Dev</DefaultValue>
+      <Value>$(SqlCmdVar__1)</Value>
+    </SqlCmdVariable>
   </ItemGroup>
 </Project>
